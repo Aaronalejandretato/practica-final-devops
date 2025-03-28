@@ -36,6 +36,5 @@ jobs:
         with:
           context: .
           push: true
-
-          tags: ${{ vars.DOCKER_USERNAME }}/practica-final-devops  # Aquí está el cambio
+          tags: ${{ vars.DOCKER_USERNAME }}/practica-final-devops  
           labels: ${{ steps.meta.outputs.labels }}
