@@ -31,5 +31,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/practica-final-devops:${{ github.sha }}  # Cambia el tag
+          tags: ${{ secrets.DOCKER_USERNAME }}/practica-final-devops:${{ github.sha }}  # Aquí está el cambio
           labels: ${{ steps.meta.outputs.labels }}
