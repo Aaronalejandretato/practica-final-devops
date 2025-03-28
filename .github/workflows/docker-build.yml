@@ -3,10 +3,8 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - container-cd
+      - main
   pull_request:
-    branches:
-      - container-cd
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true
