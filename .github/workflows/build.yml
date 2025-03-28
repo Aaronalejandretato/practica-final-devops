@@ -1,5 +1,7 @@
+
 name: Build and Push to Docker Hub
 
+f1c9317cf80ab8:.github/workflows/build.yml
 on:
   push:
     branches:
@@ -25,11 +27,17 @@ jobs:
         with:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
+          
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker-container
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
+
           tags: ${{ vars.DOCKER_USERNAME }}/practica-final-devops  # Aquí está el cambio
           labels: ${{ steps.meta.outputs.labels }}
