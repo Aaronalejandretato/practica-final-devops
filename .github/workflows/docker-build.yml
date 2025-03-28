@@ -32,6 +32,9 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.metadata.outputs.tags }}
+          build-args: |
+            --quiet
 
+      # Este paso es opcional, solo para verificar el login
       - name: Verify Docker Hub login
         run: docker info
