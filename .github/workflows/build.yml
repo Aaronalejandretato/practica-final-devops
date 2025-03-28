@@ -1,7 +1,5 @@
 
 name: Build and Push to Docker Hub
-
-f1c9317cf80ab8:.github/workflows/build.yml
 on:
   push:
     branches:
